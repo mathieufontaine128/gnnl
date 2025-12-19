@@ -6,7 +6,7 @@
 /*   By: mfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:58:03 by mfontain          #+#    #+#             */
-/*   Updated: 2025/12/19 11:56:18 by mfontain         ###   ########.fr       */
+/*   Updated: 2025/12/19 13:41:48 by mfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -115,7 +115,8 @@ char	*get_next_line(int fd)
 	buffer = tmp;
 	return (line);
 }
-
+#include <fcntl.h>
+#include <stdio.h>
 int	main()
 {
 	int	fd;

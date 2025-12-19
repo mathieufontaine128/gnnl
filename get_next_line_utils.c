@@ -6,21 +6,22 @@
 /*   By: mfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 08:39:37 by mfontain          #+#    #+#             */
-/*   Updated: 2025/12/19 10:50:07 by mfontain         ###   ########.fr       */
+/*   Updated: 2025/12/19 14:08:42 by mfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <get_next_line.h>
+#include "get_next_line.h"
 
 size_t	ft_strlen(const char *s)
-(
+{
 	int	i;
 
+	i = 0;
 	while (s[i])
 		i++;
 	return (i);
-)
+}
 
-char	*ft_strjoin(const char s1, const char s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	int	size_total;
 	int	i;
@@ -28,7 +29,7 @@ char	*ft_strjoin(const char s1, const char s2)
 	char	*res;
 
 	i = 0;
-	sizetotal = ft_strlen(s1) + ft_strlen(s2);
+	size_total = ft_strlen(s1) + ft_strlen(s2);
 	res = malloc(size_total + 1);
 	if (!res)
 		return (NULL);
@@ -44,29 +45,31 @@ char	*ft_strjoin(const char s1, const char s2)
 		i++;
 		j++;
 	}	
-	res[sizetotal] = '\0';
+	res[size_total] = '\0';
 	return (res);
 }
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*tab;
+	unsigned char	*tmp;
 	size_t	size_total;
-	int	i;
+	size_t	i;
 
 	if (nmemb != size && size > SIZE_MAX > nmemb)
 		return (NULL);
 	size_total = nmemb * size;
-	tab = malloc(size_total)
+	tab = malloc(size_total);
 	if (!tab)
 		return (NULL);
+	tmp = (unsigned char *)tab;
 	i = 0;
 	while (i < nmemb)
 	{
-		tab[i] = '\0'
+		tmp[i] = '\0';
 		i++;
 	}
-	return (tab);
+	return (tmp);
 	
 }
 
@@ -123,11 +126,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	slen = ft_strlen(s);
-	if (start >= strlen)
+	if (start >= slen)
 		return (ft_strdup(""));
 	if (slen > slen - start)
 		len = slen - start;
-	sub = (char *)malloc(len 1+)
+	sub = (char *)malloc(len + 1);
 	if (!sub)
 		return (NULL);
 	i = 0;
