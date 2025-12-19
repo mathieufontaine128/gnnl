@@ -6,13 +6,14 @@
 /*   By: mfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 08:16:56 by mfontain          #+#    #+#             */
-/*   Updated: 2025/12/19 10:54:41 by mfontain         ###   ########.fr       */
+/*   Updated: 2025/12/19 11:57:45 by mfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef GET_NEXT_LINE_H
 #define GET_NEXT_LINE_H
 
 #include <stdlib.h>
+#include <unistd.h>
 #include <stdint.h>
 
 #ifndef BUFFER_SIZE

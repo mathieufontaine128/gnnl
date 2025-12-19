@@ -6,12 +6,12 @@
 /*   By: mfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:58:03 by mfontain          #+#    #+#             */
-/*   Updated: 2025/12/19 11:40:51 by mfontain         ###   ########.fr       */
+/*   Updated: 2025/12/19 11:56:18 by mfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
 
-static char	*read_and_buffer(int fd, char *buffer)
+char	*read_and_buffer(int fd, char *buffer)
 {
 	int	rd;
 	char	*tmp;
@@ -30,7 +30,7 @@ static char	*read_and_buffer(int fd, char *buffer)
 	free(tmp);
 	return (buffer);
 }
-static	char	*extract_line(char *buffer)
+char	*extract_line(char *buffer)
 {
 	char	*line;
 	int	i;
@@ -52,7 +52,7 @@ static	char	*extract_line(char *buffer)
 	return (line);
 }
 
-static char	*free_buffer(char *buffer)
+char	*free_buffer(char *buffer)
 {
 	int	i;
 	char	*new_buffer;
